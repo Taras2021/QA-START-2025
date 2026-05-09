@@ -1,6 +1,6 @@
 package org.prog.session4;
 
-import org.prog.session1.Car;
+import org.prog.session1.CarHomeWork1;
 
 public class Session4 {
 
@@ -14,9 +14,9 @@ public class Session4 {
      */
 
     public static void main(String[] args) {
-        Car car1 = new Car();
+        CarHomeWork1 car1 = new CarHomeWork1();
         car1.color = "red";
-        Car car2 = new Car();
+        CarHomeWork1 car2 = new CarHomeWork1();
         car2.color = "red";
 
 //        String s1 = "red";
