@@ -6,6 +6,7 @@ package org.prog.session2;
 public class CarPainter {
 
     public int breakDuration;
+    private String polishing;
 
     public void prepareCarForPainting(Car2 car) {
         car.color = null;
@@ -17,5 +18,10 @@ public class CarPainter {
         } else {
             car.color = color;
         }
+    }
+
+    public void polishCars(Car2 car) {
+        System.out.println("polishing " + car.color);
+
     }
 }
