@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class PageObjectTests {
 
-    private WebDriver driver;
+    protected WebDriver driver;
     private GooglePage googlePage;
     public W3SchoolsPage w3SchoolsPage;
 
