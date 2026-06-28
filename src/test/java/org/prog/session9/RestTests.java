@@ -12,6 +12,8 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.Matchers.notNullValue;
+
 //TODO: add check for location.street.number
 //TODO: add check for location.street.name
 //TODO: add check for location.coordinates.latitude
@@ -66,7 +68,32 @@ public class RestTests {
                 .contentType(ContentType.JSON)
                 .body("results.gender", Matchers.hasItem("male"))
                 .body("results.gender", Matchers.hasItem("female"));
+
     }
+
+    @Test
+    public void  myHomeTaskRest(){
+
+        RestAssured.given()
+                .baseUri("https://randomuser.me/")
+                .basePath("api/")
+                .queryParam("inc", "location")
+                .get()
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("results.location.street.number", notNullValue())
+                .body("results.location.street.name", notNullValue())
+                .body("results.location.coordinates.latitude", notNullValue())
+                .body("results.location.coordinates.longitude", notNullValue());
+
+
+
+
+
+    }
+
+
 
     private RequestSpecification generateRequestSpecification(String baseUri) {
         RequestSpecification requestSpecification = RestAssured.given();
